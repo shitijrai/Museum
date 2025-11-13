@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>National Museum India — Locomotive + GSAP</title>
+
+  <!-- Locomotive CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- wrap everything inside data-scroll-container for Locomotive -->
+  <div data-scroll-container id="scroll-container">
+
+    <!-- NAV -->
+    <header data-scroll-section>
+      <nav class="navbar" data-animate>
+        <div class="brand">
+          <div class="logo">🏛 National Museum</div>
+          <div class="sub">India • Heritage & Research</div>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home" data-scroll-to>Home</a></li>
+          <li><a href="#about" data-scroll-to>About</a></li>
+          <li><a href="#exhibitions" data-scroll-to>Exhibitions</a></li>
+          <li><a href="#learning" data-scroll-to>Learning</a></li>
+          <li><a href="#gallery" data-scroll-to>Gallery</a></li>
+          <li><a href="#contact" data-scroll-to>Contact</a></li>
+        </ul>
+
+        <div class="controls">
+          <input id="search" class="search" type="search" placeholder="Search artifacts, exhibitions, learning..." aria-label="Search"/>
+          <button id="theme-toggle" class="theme-toggle" title="Toggle theme">☀️</button>
+          <button id="menu-toggle" class="menu-toggle" aria-label="menu">☰</button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <!-- HERO -->
+      <section id="home" class="hero" data-scroll-section>
+        <div class="hero-inner" data-animate>
+          <h1>Discover India's Rich Heritage</h1>
+          <p>Explore thousands of artifacts, curated exhibitions, learning programs & research.</p>
+          <div class="cta-row">
+            <a href="#exhibitions" class="btn" data-scroll-to>See Exhibitions</a>
+            <a href="#learning" class="btn btn-muted" data-scroll-to>Learning & Outreach</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEARCH RESULTS -->
+      <section id="results" class="results hidden" aria-live="polite" data-scroll-section>
+        <div class="container">
+          <h2>Search Results</h2>
+          <div id="results-grid" class="results-grid"></div>
+          <p id="no-results" class="no-results">No results found.</p>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="about" data-scroll-section>
+        <div class="container" data-animate>
+          <h2>About the Museum</h2>
+          <p id="about-text">
+            The National Museum, New Delhi (est. 1949) preserves over 200,000 works — sculptures, paintings,
+            manuscripts, textiles, coins and archaeological finds — tracing more than five millennia of Indian heritage.
+            The museum's research and conservation departments advance knowledge through collaborations, publications and exhibitions.
+          </p>
+
+          <div class="about-grid">
+            <div>
+              <h3>Mission</h3>
+              <p>Preserve, research, and present India's cultural legacy to the public and scholars.</p>
+            </div>
+            <div>
+              <h3>Collections</h3>
+              <p>Harappan artifacts, Buddhist art, medieval sculptures, textiles & modern art.</p>
+            </div>
+            <div>
+              <h3>Research</h3>
+              <p>Conservation science, cataloging projects and academic collaborations.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXHIBITIONS -->
+      <section id="exhibitions" class="exhibitions" data-scroll-section>
+        <div class="container" data-animate>
+          <h2>Exhibitions, Art & Research</h2>
+          <div id="exhibit-grid" class="exhibit-grid"></div>
+        </div>
+      </section>
+
+      <!-- LEARNING -->
+      <section id="learning" class="learning" data-scroll-section>
+        <div class="container" data-animate>
+          <h2>Learning & Outreach</h2>
+          <p>Workshops, guided tours, school programs and community outreach that connect people to art & history.</p>
+          <ul id="learning-list" class="learn-list"></ul>
+        </div>
+      </section>
+
+      <!-- GALLERY (slider + grid) -->
+      <section id="gallery" class="gallery" data-scroll-section>
+        <div class="container" data-animate>
+          <h2>Gallery</h2>
+
+          <!-- slider -->
+          <div class="slider" id="slider">
+            <div class="slides" id="slides"></div>
+            <div class="slider-controls">
+              <button id="prev" aria-label="previous">‹</button>
+              <button id="next" aria-label="next">›</button>
+            </div>
+          </div>
+
+          <!-- grid -->
+          <div id="gallery-grid" class="gallery-grid"></div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="contact" data-scroll-section>
+        <div class="container" data-animate>
+          <h2>Contact Us</h2>
+          <p>Email: info@nationalmuseumindia.gov.in | Phone: +91-11-23019272</p>
+          <p>Janpath, New Delhi - 110011</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer data-scroll-section>
+      <div class="container foot-inner">
+        <div>© 2025 National Museum India</div>
+        <div class="social">Follow: <a href="#">Twitter</a> • <a href="#">Instagram</a></div>
+      </div>
+    </footer>
+
+  </div> <!-- end scroll container -->
+
+  <!-- GSAP + ScrollTrigger + Locomotive -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
